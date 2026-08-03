@@ -5,12 +5,12 @@ node{
       }
       stage('Build'){
          // Get maven home path and build
-         def mvnHome =  /opt/maven name: 'Maven 3.5.4', type: 'maven'   
+         def mvnHome =  '/opt/maven' name: 'Maven 3.5.4', type: 'maven'   
          sh "${mvnHome}/bin/mvn package -Dmaven.test.skip=true"
       }       
      
      stage ('Test'){
-         def mvnHome =  /opt/maven name: 'Maven 3.5.4', type: 'maven'    
+         def mvnHome =  '/opt/maven' name: 'Maven 3.5.4', type: 'maven'    
          sh "${mvnHome}/bin/mvn verify; sleep 3"
       }
       
